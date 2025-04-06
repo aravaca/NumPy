@@ -51,17 +51,17 @@ class LinkedList:
                 return
             else:
                 return
-        else:
+        
+        if curr.data is key:
+            self.head = curr.next
+            return
+        prev = self.head
+        while curr:
             if curr.data is key:
-                self.head = curr.next
+                prev.next = curr.next
                 return
-            prev = self.head
-            while curr:
-                if curr.data is key:
-                    prev.next = curr.next
-                    return
-                prev = curr
-                curr = curr.next
+            prev = curr
+            curr = curr.next
                 
 
 
